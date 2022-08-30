@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import './UserManage.scss';
-import {getAllUsers} from '../../services/userService'
+import {getAllUsers, createNewUserService} from '../../services/userService'
 import ModalUser from './ModalUser';
 
 
@@ -17,6 +17,10 @@ class UserManage extends Component {
     }
 
     async componentDidMount() {
+        await this.getAllUsersFromReact();
+
+    }
+    getAllUsersFromReact = async() =>{
         let response  = await getAllUsers('ALL');
         if(response && response.errCode === 0){
             this.setState({
@@ -39,6 +43,23 @@ class UserManage extends Component {
         })
     }
 
+    createNewUser = async (data) =>{
+       try{
+             let response = await createNewUserService(data);
+             if (response && response.errCode !==0 ){
+                alert(response.errMessage)
+             }else{
+                await this.getAllUsersFromReact();
+                this.setState({
+                    isOpenModalUser:false
+                })
+             }
+       } catch(e){
+        console.log(e)
+       }
+        
+    }
+
 
     render() {
         let arrUses = this.state.arrUses;
@@ -48,7 +69,7 @@ class UserManage extends Component {
 
                 isOpen={this.state.isOpenModalUser}
                 toggleFromParent={this.toggleUserModal}
-                test={'abc'}
+                createNewUser = {this.createNewUser}
                 
                 
                 />
@@ -66,6 +87,8 @@ class UserManage extends Component {
                 </div>
                 <div className='users-table mt-3 mx-1'>
                 <table id="customers">
+                <tbody>
+
                      <tr>
                        <th>Email</th>
                        <th>First name</th>
@@ -73,8 +96,8 @@ class UserManage extends Component {
                        <th>Address</th>
                        <th>Actions</th>
                      </tr>
-                   
-                        {arrUses && arrUses.map((item, index) =>{
+                                           
+                     {arrUses && arrUses.map((item, index) =>{
                                 return(
                                     <tr key={index}> 
                                       <td>{item.email}</td>
@@ -89,6 +112,9 @@ class UserManage extends Component {
                                 ) 
                             }) 
                         } 
+
+                     </tbody>
+
 
                       
                 </table>
