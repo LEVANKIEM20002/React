@@ -6,10 +6,9 @@ class Home extends Component {
 
     render() {
         const { isLoggedIn } = this.props;
-        let linkToRedirect = isLoggedIn ? '/system/user-manage' : '/login';
+        let linkToRedirect = isLoggedIn ? '/system/user-manage' : '/home';
 
-        return (
-            <Redirect to={linkToRedirect} />
+        return ( <Redirect to = { linkToRedirect }/>
         );
     }
 
@@ -22,8 +21,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
-    };
+    return {};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
