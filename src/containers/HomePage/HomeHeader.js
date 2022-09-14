@@ -6,7 +6,6 @@ import { FormattedMessage } from 'react-intl';
 import {LANGUAGES} from "../../utils";
 
 import {changeLanguageApp} from "../../store/actions"
-import { Label } from 'reactstrap';
 
 
 class HomeHeader extends Component {
