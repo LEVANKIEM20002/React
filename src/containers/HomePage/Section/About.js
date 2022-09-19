@@ -19,7 +19,7 @@ class About extends Component {
                 </div>
                 <div className='section-about-content'>
                     <div className='content-left'>
-                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/j4uW1GXNcwk?list=RDj4uW1GXNcwk" title="ĐÔNG PHAI MỜ DÁNG AI REMIX - DATKAA | BÌNH HỒ X FT MẠNH MẤT XÁC - BXH NHẠC HOT TIKTOK ✈️" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/j4uW1GXNcwk?list=RDj4uW1GXNcwk" title="ĐÔNG PHAI MỜ DÁNG AI REMIX - DATKAA | BÌNH HỒ X FT MẠNH MẤT XÁC - BXH NHẠC HOT TIKTOK ✈️" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
                     </div>
                     <div className='content-right'>
