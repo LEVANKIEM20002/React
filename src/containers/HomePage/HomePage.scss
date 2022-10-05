@@ -1,123 +1,133 @@
-.slick-prev{
+.slick-prev {
     // position: relative !important;
-    left: -20px !important;
-    z-index: 100 !important;
-    height: 48px !important;
-    width: 44px !important;
-    background: #fff!important;
-    border:  2px solid #d7d7d7!important;
+    left         : -20px !important;
+    z-index      : 100 !important;
+    height       : 48px !important;
+    width        : 44px !important;
+    background   : #fff !important;
+    border       : 2px solid #d7d7d7 !important;
     border-radius: 5px;
 
-    &:hover{
-        background:  #fff8f8 !important;
+    &:hover {
+        background: #fff8f8 !important;
     }
 
 }
 
-.slick-prev:before, .slick-next:before{
+.slick-prev:before,
+.slick-next:before {
     // content: "\e257" !important;
     font-family: FontAwesome !important;
-    color: red!important;
+    color      : red !important;
 
 }
 
-.slick-next{
+.slick-next {
     // position: relative !important;
-    right: -10px !important;
-    z-index: 100 !important;
-    height: 48px !important;
-    width: 44px !important;
-    background: #fff!important;
-    border:  2px solid #d7d7d7!important;
+    right        : -10px !important;
+    z-index      : 100 !important;
+    height       : 48px !important;
+    width        : 44px !important;
+    background   : #fff !important;
+    border       : 2px solid #d7d7d7 !important;
     border-radius: 5px;
 
-    &:hover{
-        background:  #fff8f8 !important;
+    &:hover {
+        background: #fff8f8 !important;
     }
 }
-.slick-disabled{
+
+.slick-disabled {
     display: none !important;
 }
-.section-share{
-    &.section-specialty{
-    background: #f5f5f5;
+
+.section-share {
+    &.section-specialty {
+        background: #f5f5f5;
     }
-    &.section-outstanding-doctor{
-    background: #f5f5f5;
+
+    &.section-outstanding-doctor {
+        background: #f5f5f5;
 
     }
-    &.section-about{
-        height: 500px !important;
-        border-top: 1px solid #f5f5f5;
-        border-bottom:  1px solid #f5f5f5;
-    } 
-    .section-body{
 
-        .section-customize{
-            .bg-img{
-                width: 278px;
-                height: 150px;
+    &.section-about {
+        height       : 500px !important;
+        border-top   : 1px solid #f5f5f5;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .section-body {
+
+        .section-customize {
+            .bg-img {
+                width              : 278px;
+                height             : 150px;
                 background-position: center center;
-                background-repeat: no-repeat ;
-                background-size: cover ;
-                background-color: #eee;
+                background-repeat  : no-repeat;
+                background-size    : cover;
+                background-color   : #eee;
 
-                &.section-specialty{
-                background-image: url(../../assets/specialty/co-xuong-khop.jpg);
-
-                }
-                &.section-medical-facility{
-                background-image: url(../../assets/medical-facility/bv-viet-duc.jpg);
-                }
-                &.section-outstanding-doctor{
-                // background-image: url(../../assets/outstanding-doctor/anh-dai-dien-bs.jpg);
-                width: 120px;
-                height: 120px;
-                border-radius: 50%;
+                &.section-specialty {
+                    background-image: url(../../assets/specialty/co-xuong-khop.jpg);
 
                 }
-                &.section-handbook{
-                background-image: url(../../assets/handbook/kham-suc-khoe-tong-quat-o-ha-noi.jpg);
+
+                &.section-medical-facility {
+                    background-image: url(../../assets/medical-facility/bv-viet-duc.jpg);
+                }
+
+                &.section-outstanding-doctor {
+                    // background-image: url(../../assets/outstanding-doctor/anh-dai-dien-bs.jpg);
+                    width        : 120px;
+                    height       : 120px;
+                    border-radius: 50%;
+
+                }
+
+                &.section-handbook {
+                    background-image: url(../../assets/handbook/kham-suc-khoe-tong-quat-o-ha-noi.jpg);
 
                 }
             }
         }
-              
+
     }
 
 }
 
-.section-share{
+.section-share {
     height: 330px;
 
-    .section-container{
-        margin: 0 170px;
-        display: flex;
+    .section-container {
+        margin        : 0 170px;
+        display       : flex;
         flex-direction: column;
 
-        .section-header{
-            height: 60px;
+        .section-header {
+            height       : 60px;
             margin-bottom: 30px;
-            padding-top: 30px;
+            padding-top  : 30px;
 
-            .title-section{
-                font-size: 22px;
+            .title-section {
+                font-size  : 22px;
                 font-weight: 600;
             }
 
-            .btn-section{
-                float: right;
-                display: block;
-                padding: 10px 15px;
-                border: none;
-                outline: none;
-                background: #ebebeb;
-                border-radius: 10px;
-                color: black;
+            .btn-section {
+                float         : right;
+                display       : block;
+                padding       : 10px 15px;
+                border        : none;
+                outline       : none;
+                background    : #ebebeb;
+                border-radius : 10px;
+                color         : black;
                 text-transform: uppercase;
-                cursor: pointer;
-                &:hover{
-                    color: #fff;
+                cursor        : pointer;
+
+                &:hover {
+                    color     : #fff;
                     background: #f7d800;
                 }
             }
@@ -127,58 +137,62 @@
     }
 }
 
-.section-outstanding-doctor{
-    .outer-bg{
-        display: flex;
+.section-outstanding-doctor {
+    .outer-bg {
+        display        : flex;
         justify-content: center;
-        margin-bottom: 10px;
+        margin-bottom  : 10px;
     }
 
-    .section-customize{
+    .section-customize {
         padding: 5px;
-        cursor: pointer;
-        .customize-border{
-            border: 1px solid red;
+        cursor : pointer;
+
+        .customize-border {
+            border : 1px solid red;
             padding: 20px;
         }
     }
 
 }
 
-.home-footer{
-    text-align: center;
+.home-footer {
+    text-align : center;
     padding-top: 8px;
-    a{
+
+    a {
         text-decoration: unset;
     }
 
 
 }
 
-.section-about{
-    padding:  0 100px;
-    .section-about-header{
-        padding: 20px 10px;
-        font-size: 22px;
+.section-about {
+    padding: 0 100px;
+
+    .section-about-header {
+        padding    : 20px 10px;
+        font-size  : 22px;
         font-weight: 600;
     }
 
-    .section-about-content{
+    .section-about-content {
         display: flex;
-        gap: 15px;
-        width: 100%;
+        gap    : 15px;
+        width  : 100%;
 
-        .content-left{
+        .content-left {
             width: 60%;
         }
-        .content-right{
-            width: 40%;p{
+
+        .content-right {
+            width: 40%;
+
+            p {
                 text-align: justify;
                 font-style: italic;
-                padding: 15px;
+                padding   : 15px;
             }
         }
     }
 }
-
-
