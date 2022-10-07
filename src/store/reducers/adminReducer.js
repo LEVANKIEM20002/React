@@ -8,6 +8,7 @@ const initialState = {
   users: [],
   topDoctors: [],
   allDoctors: [],
+  allScheduleTime:[],
 };
 
 const adminReducer = (state = initialState, action) => {
@@ -18,20 +19,19 @@ const adminReducer = (state = initialState, action) => {
       return {
         ...copyState,
       };
-
     case actionTypes.FETCH_GENDER_SUCCESS:
       state.genders = action.data;
       state.isLoadingGender = false;
       return {
         ...state,
-      };
+      };    
     case actionTypes.FETCH_GENDER_FAILED:
       state.isLoadingGender = false;
       state.genders = [];
       return {
         ...state,
       };
-
+  
     case actionTypes.FETCH_POSITION_SUCCESS:
       state.positions = action.data;
       return {
@@ -64,6 +64,7 @@ const adminReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+
     case actionTypes.FETCH_TOP_DOCTORS_SUCCESS:
       state.topDoctors = action.dataDoctors;
       return {
@@ -74,6 +75,7 @@ const adminReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+
     case actionTypes.FETCH_ALL_DOCTORS_SUCCESS:
       state.allDoctors = action.dataDr;
       return {
@@ -84,6 +86,17 @@ const adminReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+      
+      case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS:
+        state.allScheduleTime = action.dataTime;
+        return {
+          ...state,
+        };
+      case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED:
+        state.allScheduleTime = [];
+        return {
+          ...state,
+        };
 
     default:
       return state;
