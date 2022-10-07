@@ -10,7 +10,7 @@ class About extends Component {
         <div className="section-about-header">Truyên thông nói về channel</div>
         <div className="section-about-content">
           <div className="content-left">
-            <iframe
+            {/* <iframe
               width="100%"
               height="400px"
               src="https://www.youtube.com/embed/j4uW1GXNcwk?list=RDj4uW1GXNcwk"
@@ -18,6 +18,16 @@ class About extends Component {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+            ></iframe> */}
+
+            <iframe
+              width="100%"
+              height="400px"
+              src="https://www.youtube.com/embed/fecdUEto2kU?list=PLncHg6Kn2JT6E38Z3kit9Hnif1xC_9VqI"
+              title="#73 Thêm Hiệu Ứng Chọn/Bỏ Và Xử Lý Dữ Liệu Tạo Lịch Khám Bệnh | Redux-React Cho Người Mới Bắt Đầu"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
             ></iframe>
           </div>
           <div className="content-right">
