@@ -160,17 +160,56 @@ class ManageDoctor extends Component {
     });
     console.log("check state: ", this.state);
   };
+
   handleChangeSelect = async (selectedOption) => {
     this.setState({ selectedOption });
+    let { listPayment, listPrice, listProvince } = this.state;
 
     let res = await getDetailInforDoctor(selectedOption.value);
     if (res && res.errCode === 0 && res.data && res.data.Markdown) {
       let markdown = res.data.Markdown;
+
+      let addressClinic = "",
+        nameClinic = "",
+        note = "",
+        paymentId = "",
+        priceId = "",
+        provinceId = "",
+        selectPrice = "",
+        selectPayment = "",
+        selectProvince = "";
+
+      if (res.data.Doctor_Infor) {
+        addressClinic = res.data.Doctor_Infor.addressClinic;
+        nameClinic = res.data.Doctor_Infor.nameClinic;
+        note = res.data.Doctor_Infor.note;
+
+        paymentId = res.data.Doctor_Infor.paymentId;
+        priceId = res.data.Doctor_Infor.priceId;
+        provinceId = res.data.Doctor_Infor.provinceId;
+
+        selectPayment = listPayment.find((item) => {
+          return item && item.value === paymentId;
+        });
+        selectPrice = listPrice.find((item) => {
+          return item && item.value === priceId;
+        });
+        selectProvince = listProvince.find((item) => {
+          return item && item.value === provinceId;
+        });
+      }
+
       this.setState({
         contentHTML: markdown.contentHTML,
         contentMarkdown: markdown.contentMarkdown,
         description: markdown.description,
         hasOlData: true,
+        addressClinic: addressClinic,
+        nameClinic: nameClinic,
+        note: note,
+        selectPayment: selectPayment,
+        selectPrice: selectPrice,
+        selectProvince: selectProvince,
       });
     } else {
       this.setState({
@@ -178,6 +217,9 @@ class ManageDoctor extends Component {
         contentMarkdown: " ",
         description: " ",
         hasOlData: false,
+        addressClinic: "",
+        nameClinic: "",
+        note: "",
       });
     }
     console.log(`Option selected:`, res);
@@ -281,9 +323,7 @@ class ManageDoctor extends Component {
             </label>
             <input
               className="form-control"
-              onChange={(event) =>
-                this.handleOnChangeText(event, "nameClinic")
-              }
+              onChange={(event) => this.handleOnChangeText(event, "nameClinic")}
               value={this.state.nameClinic}
             />
           </div>
@@ -305,9 +345,7 @@ class ManageDoctor extends Component {
             </label>
             <input
               className="form-control"
-              onChange={(event) =>
-                this.handleOnChangeText(event, "note")
-              }
+              onChange={(event) => this.handleOnChangeText(event, "note")}
               value={this.state.note}
             />
           </div>
