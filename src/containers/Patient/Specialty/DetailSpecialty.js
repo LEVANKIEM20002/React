@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
+import HomeHeader from "../../HomePage/HomeHeader";
 
+import "./DetailSpecialty.scss";
 
-class DefaultClass extends Component {
+class DetailSpecialty extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
 
   async componentDidMount() {}
@@ -16,17 +16,15 @@ class DefaultClass extends Component {
   async componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.props.language !== prevProps.language) {
     }
-
   }
 
-
-
   render() {
-      return(
-        <div>
-            
-        </div>
-      );
+    return (
+      <>
+        <HomeHeader />
+        <div>hello ae</div>
+      </>
+    );
   }
 }
 
@@ -40,4 +38,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DefaultClass);
+export default connect(mapStateToProps, mapDispatchToProps)(DetailSpecialty);
